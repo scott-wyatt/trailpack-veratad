@@ -1,8 +1,10 @@
 'use strict'
 
 const Service = require('trails-service')
-
-// const _ = require('lodash')
+const joi = require('joi')
+const lib = require('../../lib')
+const veratad = lib.veratad
+const _ = require('lodash')
 
 /**
  * @module VeratadService
@@ -11,46 +13,113 @@ const Service = require('trails-service')
 module.exports = class VeratadService extends Service {
   /**
    * Check Age Match 5.0
-   * @param {Object} body the details of the search
+   * @param {Object} target the details of the search
    * @param {Object} options the options of the search
    */
-  // {
-  //   "user": "ws@company.com",
-  //   "pass": "xxxxxxxxxx",
-  //   "service": "AgeMatch5.0",
-  //   "reference": "123456",
-  //   "target": {
-  //     "fn": "JOHN",
-  //     "ln": "WHO",
-  //     "addr": "245 MAIN ST APT 54", "city": "ANYTOWN",
-  //     "state": "NJ",
-  //     "zip": "12346",
-  //     "dob": "19870621",
-  //     "age": "21+",
-  //     "dob_type": "YYYYMMDD",
-  //     "ssn": "123456789"
-  //   }
-  // }
 
-  ageMatch(body, options) {
+  ageMatch(target, options) {
+    return new Promise((resolve, reject) => {
+      const config = _.defaults(this.app.config.veratad, options)
+      const client = veratad(config)
 
+      const schema = joi.object().keys({
+        fn: joi.string().required(),
+        ln: joi.string().required(),
+        addr: joi.string(),
+        state: joi.string(),
+        zip: joi.string(),
+        dob: joi.string(),
+        dob_type: joi.string(),
+        age: joi.string(),
+        ssn: joi.string()
+      })
+
+      joi.validate(target, schema, (err, value) => {
+        if (err) {
+          return reject(err)
+        }
+
+        client.ageMatch.test(target, (err, response) => {
+          if (err) {
+            return reject(err)
+          }
+          return resolve(response)
+        })
+      })
+    })
   }
 
   /**
    * Check IDMAtch
-   * @param {Object} body the details of the search
+   * @param {Object} target the details of the search
    * @param {Object} options the options of the search
    */
-  idMatch(body, options) {
+  idMatch(target, options) {
+    return new Promise((resolve, reject) => {
+      const config = _.defaults(this.app.config.veratad, options)
+      const client = veratad(config)
 
+      const schema = joi.object().keys({
+        fn: joi.string().required(),
+        ln: joi.string().required(),
+        addr: joi.string(),
+        state: joi.string(),
+        zip: joi.string(),
+        dob: joi.string(),
+        dob_type: joi.string(),
+        age: joi.string(),
+        ssn: joi.string()
+      })
+
+      joi.validate(target, schema, (err, value) => {
+        if (err) {
+          return reject(err)
+        }
+
+        client.idMatch.test(target, (err, response) => {
+          if (err) {
+            return reject(err)
+          }
+          return resolve(response)
+        })
+      })
+    })
   }
 
   /**
    * Check IDMAtchPlus 5.0
-   * @param {Object} body the details of the search
+   * @param {Object} target the details of the search
    * @param {Object} options the options of the search
    */
-  idMatchPlus(body, options) {
+  idMatchPlus(target, options) {
+    return new Promise((resolve, reject) => {
+      const config = _.defaults(this.app.config.veratad, options)
+      const client = veratad(config)
 
+      const schema = joi.object().keys({
+        fn: joi.string().required(),
+        ln: joi.string().required(),
+        addr: joi.string(),
+        state: joi.string(),
+        zip: joi.string(),
+        dob: joi.string(),
+        dob_type: joi.string(),
+        age: joi.string(),
+        ssn: joi.string()
+      })
+
+      joi.validate(target, schema, (err, value) => {
+        if (err) {
+          return reject(err)
+        }
+
+        client.idMatchPlus.test(target, (err, response) => {
+          if (err) {
+            return reject(err)
+          }
+          return resolve(response)
+        })
+      })
+    })
   }
 }
