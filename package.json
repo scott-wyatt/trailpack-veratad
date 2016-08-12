@@ -43,5 +43,5 @@
     "extends": "trails"
   },
   "repository": "https://github.com/scott-wyatt/trailpack-veratad.git",
-  "private": true
+  "private": false
 }
