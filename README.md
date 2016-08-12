@@ -7,6 +7,26 @@
 
 Trailpack for Veratad API
 
+## Installation
+
+With npm:
+```sh
+$ npm install trailpack-veratad 
+```
+
+With yo:
+```sh
+$ yo trails:trailpack trailpack-veratad
+```
+
+## Config
+```js
+
+```
+
+## API Documentation
+[Docs](https://file.ac/5tW2sDcpnyo/Veratad_API_User_Guide_JSON_5.10_8_8_2016.pdf)
+
 ## Install
 
 ```sh
