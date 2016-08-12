@@ -21,7 +21,14 @@ $ yo trails:trailpack trailpack-veratad
 
 ## Config
 ```js
+// config/veratad.js
 
+module.exports = {
+  host: 'https://production.idresponse.com',
+  user: 'xxxx',
+  pass: 'xxxx',
+  test_key: 'general' // turn to false for production
+}
 ```
 
 ## API Documentation
