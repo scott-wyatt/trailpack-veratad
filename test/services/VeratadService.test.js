@@ -16,8 +16,9 @@ describe('api.services.VeratadService', () => {
         city: 'Stratford',
         state: 'CT',
         zip: '06614',
-        dob: '1974/08/21',
-        dob_type: 'YYYY/MM/DD',
+        dob: '19740821',
+        dob_type: 'YYYYMMDD',
+        age: '21+',
         ssn: '854125698'
       }, {
         test_key: 'general'

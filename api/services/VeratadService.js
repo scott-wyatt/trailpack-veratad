@@ -69,7 +69,6 @@ module.exports = class VeratadService extends Service {
         zip: joi.string().alphanum().min(3).max(15),
         dob: joi.any(),
         dob_type: joi.string(),
-        age: joi.string(),
         ssn: joi.string().alphanum().min(4).max(10)
       })
 
@@ -107,7 +106,6 @@ module.exports = class VeratadService extends Service {
         zip: joi.string().alphanum().min(3).max(15),
         dob: joi.any(),
         dob_type: joi.string(),
-        age: joi.string(),
         ssn: joi.string().alphanum().min(4).max(10)
       })
 
