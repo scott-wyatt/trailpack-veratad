@@ -1,0 +1,1 @@
+exports.VeratadService = require('./VeratadService')

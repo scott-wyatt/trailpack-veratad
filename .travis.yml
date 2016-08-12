@@ -1,0 +1,23 @@
+language: node_js
+os:
+- linux
+node_js:
+- 4
+- 5
+- 6
+notifications:
+  email: false
+  webhooks:
+    urls:
+    - https://webhooks.gitter.im/e/54f8a1e753f859f5ca1a
+    on_start: never
+    on_failure: change
+deploy:
+  provider: npm
+  email: scottwyatt86@gmail.com
+  api_key:
+    secure: P0jo3U9wB7y0k9P+RT23ba6gaZ7vWNMaNwj+fSb1/K8pj+pGVz0/rhMmwLAGj1Icn9TdfcGdcubfuqCFeTALr/V2m2oRzJTD0tZGPolZj99G+ck5yYpk2bYsdX0O1tq21RPtU7JI0vW78CT1ck8rK0Lxgh+CpAjkoLmbqfDSYR8gCLrtk/iTrF4ybbKpF3jaWO+hEAmsRbyd7iEUHtayg+Gw3/DwsHdrjgVZWEEQEHRUEmfn3rkoJHAOHLItoxlxFlmtZYh1pjyFkxN/IBi2pJb0YTPCSZdzMvD/y9+QzfgPeM1jfLnQRIu6ylLu+VKw7DgEFKVAD1tf2jvS7WnATs9PiXk8Ic+dMuJH3LA4kXGJ1iY8JO3F71M0WVcylSV4WwOQJqg+35L6o9D9BBF/i41XMoJMMoNbLdi+lHevQFrMEGi/OOwrMNez3c6FjZQ5QUWvPJbbiuGPjfkJrAsLaZxQzci1AbFqqJ9vn5VsIH29Eg/zQnTag9AkuhIR223AMLSaZtbFN2F0RnYqN0Pp+qIVso9BNClu18sQKrW4wwcEdzrYAgDwzQly02YrAd4GlshwfFmFsifKEbQVAyG1gqf9hiFVXh4ZZpO2oCdTu3Uj6a1/2T+foaw4sRU/hGfarkso/Btuf7SHVJCovM0jupP2J3eTBa9Rp/Hx/nYufN4=
+  on:
+    tags: true
+    repo: scott-wyatt/trailpack-veratad
+    node: 6

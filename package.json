@@ -1,0 +1,45 @@
+{
+  "name": "trailpack-veratad",
+  "version": "0.0.0",
+  "description": "Trailpack for Veratad API",
+  "homepage": "http://trailsjs.io",
+  "author": {
+    "name": "Scott Wyatt",
+    "email": "scott@calistyletechnologies.com",
+    "url": "https://cali-style.com"
+  },
+  "main": "index.js",
+  "keywords": [
+    "Veratad",
+    "Node",
+    "API",
+    "trailpack",
+    "trails",
+    "trailjs"
+  ],
+  "dependencies": {
+    "joi": "^9.0.4",
+    "trailpack": "latest",
+    "trails-service": "^1.0.0-beta-2"
+  },
+  "devDependencies": {
+    "lodash": "^4.11.1",
+    "trails": "latest",
+    "eslint": "^2.4",
+    "eslint-config-trails": "^1.0.4",
+    "mocha": "^2.4.5",
+    "smokesignals": "^1.0.9",
+    "trailpack-core": "^1.0.0-beta-6"
+  },
+  "scripts": {
+    "test": "eslint . && mocha"
+  },
+  "engines": {
+    "node": ">= 4.0.0"
+  },
+  "eslintConfig": {
+    "extends": "trails"
+  },
+  "repository": "https://github.com/scott-wyatt/trailpack-veratad.git",
+  "private": true
+}
