@@ -14,9 +14,8 @@ module.exports = _.defaultsDeep({
   },
   config: {
     veratad: {
-      host: 'https://production.idresponse.com',
-      user: 'xxxx',
-      pass: 'xxxx',
+      host: 'production.idresponse.com',
+      
       test_key: true
     },
     main: {

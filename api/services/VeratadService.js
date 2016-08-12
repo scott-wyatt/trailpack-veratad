@@ -3,7 +3,7 @@
 const Service = require('trails-service')
 const joi = require('joi')
 const lib = require('../../lib')
-const veratad = lib.veratad
+const Veratad = lib.Veratad
 const _ = require('lodash')
 
 /**
@@ -20,18 +20,19 @@ module.exports = class VeratadService extends Service {
   ageMatch(target, options) {
     return new Promise((resolve, reject) => {
       const config = _.defaults(this.app.config.veratad, options)
-      const client = veratad(config)
+      const client = new Veratad(config)
 
       const schema = joi.object().keys({
         fn: joi.string().required(),
         ln: joi.string().required(),
         addr: joi.string(),
+        city: joi.string(),
         state: joi.string(),
-        zip: joi.string(),
-        dob: joi.string(),
+        zip: joi.string().alphanum().min(3).max(15),
+        dob: joi.any(),
         dob_type: joi.string(),
         age: joi.string(),
-        ssn: joi.string()
+        ssn: joi.string().alphanum().min(4).max(10)
       })
 
       joi.validate(target, schema, (err, value) => {
@@ -57,18 +58,19 @@ module.exports = class VeratadService extends Service {
   idMatch(target, options) {
     return new Promise((resolve, reject) => {
       const config = _.defaults(this.app.config.veratad, options)
-      const client = veratad(config)
+      const client = new Veratad(config)
 
       const schema = joi.object().keys({
         fn: joi.string().required(),
         ln: joi.string().required(),
         addr: joi.string(),
+        city: joi.string(),
         state: joi.string(),
-        zip: joi.string(),
-        dob: joi.string(),
+        zip: joi.string().alphanum().min(3).max(15),
+        dob: joi.any(),
         dob_type: joi.string(),
         age: joi.string(),
-        ssn: joi.string()
+        ssn: joi.string().alphanum().min(4).max(10)
       })
 
       joi.validate(target, schema, (err, value) => {
@@ -94,18 +96,19 @@ module.exports = class VeratadService extends Service {
   idMatchPlus(target, options) {
     return new Promise((resolve, reject) => {
       const config = _.defaults(this.app.config.veratad, options)
-      const client = veratad(config)
+      const client = new Veratad(config)
 
       const schema = joi.object().keys({
         fn: joi.string().required(),
         ln: joi.string().required(),
         addr: joi.string(),
+        city: joi.string(),
         state: joi.string(),
-        zip: joi.string(),
-        dob: joi.string(),
+        zip: joi.string().alphanum().min(3).max(15),
+        dob: joi.any(),
         dob_type: joi.string(),
         age: joi.string(),
-        ssn: joi.string()
+        ssn: joi.string().alphanum().min(4).max(10)
       })
 
       joi.validate(target, schema, (err, value) => {

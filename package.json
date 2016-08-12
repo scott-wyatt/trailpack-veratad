@@ -19,6 +19,8 @@
   ],
   "dependencies": {
     "joi": "^9.0.4",
+    "querystring": "^0.2.0",
+    "request": "^2.74.0",
     "trailpack": "latest",
     "trails-service": "^1.0.0-beta-2"
   },
