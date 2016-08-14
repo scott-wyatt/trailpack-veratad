@@ -33,7 +33,7 @@ module.exports = class VeratadService extends Service {
         dob_type: joi.string(),
         age: joi.string(),
         ssn: joi.string().alphanum().min(4).max(10)
-      })
+      }).unknown()
 
       joi.validate(target, schema, (err, value) => {
         if (err) {
@@ -70,7 +70,7 @@ module.exports = class VeratadService extends Service {
         dob: joi.any(),
         dob_type: joi.string(),
         ssn: joi.string().alphanum().min(4).max(10)
-      })
+      }).unknown()
 
       joi.validate(target, schema, (err, value) => {
         if (err) {
@@ -107,7 +107,7 @@ module.exports = class VeratadService extends Service {
         dob: joi.any(),
         dob_type: joi.string(),
         ssn: joi.string().alphanum().min(4).max(10)
-      })
+      }).unknown()
 
       joi.validate(target, schema, (err, value) => {
         if (err) {
