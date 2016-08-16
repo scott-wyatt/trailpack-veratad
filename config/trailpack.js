@@ -9,6 +9,17 @@ module.exports = {
    * Configure the lifecycle of this pack; that is, how it boots up, and which
    * order it loads relative to other trailpacks.
    */
+   /**
+   * API and config resources provided by this Trailpack.
+   */
+  provides: {
+    api: {
+      services: [ 'VeratadService' ]
+      // ...
+    },
+    config: [ ]
+  },
+
   lifecycle: {
     configure: {
       /**
